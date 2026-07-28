@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee_Registration_Form</title>
+</head>
+<body>
+    <h1>Employee Registration Form</h1>
+    <form>
+        <label for="empid">Employee ID</label>
+        <input type="text" id="empid" required>
+        <br><br>
+ 
+        <label for="name">Employee Name</label>
+        <input type="text" id="name" required>
+        <br><br>
+ 
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br><br>
+ 
+        <label for="mobile">Mobile</label>
+        <input type="tel" id="mobile" required>
+        <br><br>
+ 
+        <label for="department">Department</label>
+        <select id="department">
+            <option value="select option">--select option--</option>
+            <option value="development">development</option>
+            <option value="testing">testing</option>
+            <option value="hr">hr</option>
+            <option value="sales">sales</option>
+        </select>
+        <br><br>
+ 
+        <label for="experience">Experience (years)</label>
+        <input type="number" id="experience" required min="0" max="50">
+        <br><br>
+ 
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" required min="0">
+        <br><br>
+ 
+        <label for="skills">Skills</label>
+        <select id="skills">
+            <option value="select option">--select option--</option>
+            <option value="java">java</option>
+            <option value="python">python</option>
+            <option value="testing-tools">testing tools</option>
+            <option value="management">management</option>
+        </select>
+        <br><br>
+ 
+        <label for="resume">Resume Upload</label>
+        <input type="file" id="resume">
+        <br><br>
+ 
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+ 
+    <br><br>
+ 
+    <h2>Employee Report</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Experience</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EMP001</td>
+                <td>Ravi Verma</td>
+                <td>Development</td>
+                <td>3 years</td>
+                <td>45000</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>EMP002</td>
+                <td>Sneha Reddy</td>
+                <td>Testing</td>
+                <td>2 years</td>
+                <td>38000</td>
+                <td>Active</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

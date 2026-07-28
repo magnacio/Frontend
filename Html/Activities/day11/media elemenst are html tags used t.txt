@@ -1,0 +1,19 @@
+media elemenst are html tags used to display multimedia content 
+images
+audio
+video
+youtube videos
+google maps
+pdf files
+external webpages
+
+html file built  using media support
+
+no plugin 
+
+<audio>
+<video>
+source tag
+<iframe>
+I frame used to embed  
+I frame has opening and closing tag

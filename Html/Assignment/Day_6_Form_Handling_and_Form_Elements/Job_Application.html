@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job_Application_Form</title>
+</head>
+<body>
+    <h1>Job Application Form</h1>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+ 
+        <label for="age">Age</label>
+        <input type="number" id="age" required min="18" max="60">
+
+ 
+        <label for="email">email</label>
+        <input type="email" id="email" required>
+
+ 
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required>
+
+ 
+        <label for="position">Position applied for</label>
+        <select id="position">
+            <option value="select option">--select option--</option>
+            <option value="software-engineer">software engineer</option>
+            <option value="qa-engineer">qa engineer</option>
+            <option value="ml-engineer">ml engineer</option>
+            <option value="intern">intern</option>
+        </select>
+
+ 
+        <label for="experience">Years of experience</label>
+        <input type="number" id="experience" required min="0" max="50">
+        <br><br>
+ 
+        <label for="qualification">Highest qualification</label>
+        <select id="qualification">
+            <option value="select option">--select option--</option>
+            <option value="high-school">high school</option>
+            <option value="bachelors">bachelors</option>
+            <option value="masters">masters</option>
+            <option value="other">other</option>
+        </select>
+
+ 
+        <label for="resume">Resume link</label>
+        <input type="url" id="resume">
+        <br><br>
+ 
+        <label for="message">Cover letter</label>
+        <br>
+        <textarea id="message" rows="10" cols="10"></textarea>
+        <br><br>
+ 
+        <input type="submit">
+ 
+    </form>
+    
+</body>
+</html>

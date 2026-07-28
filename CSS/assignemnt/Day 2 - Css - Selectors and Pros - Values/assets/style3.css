@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+h1 {
+  color: #222222;
+}
+
+.dept {
+  display: inline-block;
+  width: 150px;
+  height: 80px;
+  line-height: 80px;
+  margin: 10px;
+  background-color: #4a90a4;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#cse {
+  background-color: #e67e22;
+}

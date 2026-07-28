@@ -1,0 +1,28 @@
+
+
+Headings (h1 through h6)
+Headings are Block-Level elements. Whenever you use a heading, it automatically starts on a new line and takes up the entire width of the page. This prevents other elements from sitting right next to it, which makes sense since it acts as a structural title for the content below it.
+
+Paragraphs (p)
+Paragraphs are also Block-Level elements. Just like headings, they clear the space around them and drop down to a new line, creating a clean block of text.
+
+Bold Text (strong or b)
+This is an Inline and Formatting element. It styles your text to look bold, but it does not break the line. It flows naturally within the sentence you place it in. Using "strong" also tells screen readers that the text has special importance.
+
+Italic Text (em or i)
+Similar to bold text, this is an Inline and Formatting element. It visually slants the text without forcing a new line. Using "em" adds semantic emphasis to the word.
+
+Highlighted Text (mark)
+This is another Inline and Formatting element. It highlights the text (usually with a yellow background) to draw the eye, all while staying perfectly inline with the surrounding paragraph.
+
+Button (button)
+A button is an Interactive element, and structurally, it behaves as an Inline element (specifically, inline-block). Its whole purpose is to be clicked by a user to trigger an action. Because it is inline, it won't force the elements after it onto a new line by default.
+
+Input Field (input)
+This is an Interactive and Inline element. It allows users to type short, single-line information (like a name or email address). It sits comfortably on the same line as its text label.
+
+Dropdown (select)
+This is also an Interactive and Inline element. It provides a clickable menu so users can choose from a list of options, all without disrupting the natural flow of the page layout.
+
+Textarea (textarea)
+A textarea is an Interactive element meant for multi-line typing, like a comment or a message. Even though it looks like a large box, it is technically an Inline element by default. That means if you don't add line breaks (like the <br> tags I used in the code), it will try to sit next to whatever element came before it.

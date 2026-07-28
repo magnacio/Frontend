@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Registration_Form</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form>
+        <label for="name">Student Name</label>
+        <input type="text" id="name" required>
+        <br><br>
+ 
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br><br>
+ 
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6">
+        <br><br>
+ 
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" required>
+        <br><br>
+ 
+        <label for="age">Age</label>
+        <input type="number" id="age" required min="15" max="60">
+        <br><br>
+ 
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="select option">--select option--</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+ 
+        <label for="skills">Skills</label>
+        <select id="skills">
+            <option value="select option">--select option--</option>
+            <option value="java">java</option>
+            <option value="python">python</option>
+            <option value="web-development">web development</option>
+            <option value="data-science">data science</option>
+        </select>
+        <br><br>
+ 
+        <label for="course">Course Selection</label>
+        <select id="course">
+            <option value="select option">--select option--</option>
+            <option value="btech">B.Tech</option>
+            <option value="mtech">M.Tech</option>
+            <option value="mca">MCA</option>
+            <option value="bca">BCA</option>
+        </select>
+        <br><br>
+ 
+        <label for="address">Address</label>
+        <br>
+        <textarea id="address" rows="5" cols="30"></textarea>
+        <br><br>
+ 
+        <label for="profile">Profile Image Upload</label>
+        <input type="file" id="profile" accept="image/*">
+        <br><br>
+ 
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+ 
+    <br><br>
+    <h2>Student Details</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>SLA ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SLA001</td>
+                <td>Saswath S</td>
+                <td>B.Tech</td>
+                <td>Saswath@example.com</td>
+                <td>9876543212</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>SLA002</td>
+                <td>Rohith Sharma</td>
+                <td>MCA</td>
+                <td>Rohith@example.com</td>
+                <td>9876543234</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

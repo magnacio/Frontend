@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+section {
+  width: 350px;
+  margin: 12px auto;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+h2, p, span {
+  margin: 4px 0;
+  color: #ffffff;
+}
+
+.zoho {
+  background-color: #d6112c;
+}
+
+.freshworks {
+  background-color: #2bb673;
+}
+
+.aspire {
+  background-color: #1e3a5f;
+}
+
+.cts {
+  background-color: #003b64;
+}
+
+.tcs {
+  background-color: #4b2e83;
+}

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a{
+     text-decoration: none;
+}
+.css1{
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    height: auto;
+    font-size: large;
+    text-align: center;
+}
+.css2{
+    background-color: black;
+    color: blue;
+    height: auto;
+    font-size: large;
+    text-align: center;
+}
+#css3{
+    background-color: aquamarine;
+    color: blanchedalmond;
+    height: auto;
+    font-size: large;
+    text-align: center;
+}
+h1{
+    color: rgb(0, 255, 89);
+}
+p{
+    color: rgb(126, 86, 86);
+}

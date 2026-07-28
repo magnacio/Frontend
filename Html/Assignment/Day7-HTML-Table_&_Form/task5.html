@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_Registration_Form</title>
+</head>
+<body>
+    <h1>Product Registration Form</h1>
+    <form>
+        <label for="productid">Product ID</label>
+        <input type="text" id="productid" required>
+        <br><br>
+
+        <label for="name">Product Name</label>
+        <input type="text" id="name" required>
+        <br><br>
+
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" required>
+        <br><br>
+
+        <label for="category">Category</label>
+        <select id="category">
+            <option value="select option">--select option--</option>
+            <option value="mobile">mobile</option>
+            <option value="laptop">laptop</option>
+            <option value="tv">tv</option>
+            <option value="accessories">accessories</option>
+        </select>
+        <br><br>
+
+        <label for="price">Price</label>
+        <input type="number" id="price" required min="0" step="0.01">
+        <br><br>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" required min="0">
+        <br><br>
+
+        <label for="supplier">Supplier</label>
+        <input type="text" id="supplier" required>
+        <br><br>
+
+        <label for="productimage">Product Image</label>
+        <input type="file" id="productimage" accept="image/*">
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <br><br>
+
+    <h2>Inventory Report</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Stock Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PRD001</td>
+                <td>Galaxy Watch</td>
+                <td>Samsung</td>
+                <td>15999</td>
+                <td>25</td>
+                <td>In Stock</td>
+            </tr>
+            <tr>
+                <td>PRD002</td>
+                <td>Wireless Mouse</td>
+                <td>Logitech</td>
+                <td>799</td>
+                <td>0</td>
+                <td>Out of Stock</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
