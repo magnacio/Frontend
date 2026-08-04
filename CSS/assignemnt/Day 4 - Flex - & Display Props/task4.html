@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Display None vs Visibility Hidden Comparison</title>
+
+  <link rel="stylesheet" href="assets/style4.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSS Layout Behavior: display: none vs visibility: hidden</h1>
+    <p>Comparing how hidden elements impact the surrounding document flow.</p>
+  </div>
+
+  <div class="container">
+    
+
+    <div class="card">
+      <h2>display: none</h2>
+      <p>Completely removed from flow. Takes up <strong>zero space</strong>, causing Box 3 to shift upward.</p>
+      
+      <div class="box-container">
+        <div class="box">Box 1</div>
+        <div class="box target-display">Box 2</div>
+        <div class="box box-3">Box 3</div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h2>visibility: hidden</h2>
+      <p>Hidden visually, but <strong>retains its layout space</strong>, leaving a blank gap above Box 3.</p>
+      
+      <div class="box-container">
+        <div class="box">Box 1</div>
+        <div class="box target-visibility">Box 2</div>
+        <div class="box box-3">Box 3</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    Save both <code>index.html</code> and <code>style.css</code> in the same folder, then open <code>index.html</code> in your browser.
+  </div>
+
+</body>
+</html>

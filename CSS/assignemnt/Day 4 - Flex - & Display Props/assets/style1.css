@@ -1,0 +1,18 @@
+
+.block-element {
+    display: block;
+    width: 300px;
+    height: 100px;
+    background-color: #ffcccc;
+    margin-bottom: 20px;
+}
+
+
+.inline-block-element {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-color: #ccffcc;
+    text-align: center;
+    line-height: 50px; 
+}

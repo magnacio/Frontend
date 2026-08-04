@@ -1,0 +1,12 @@
+Types of Display Properties
+
+block
+inline
+inline-block
+none
+flex
+inline-flex
+grid
+inline-grid
+contents
+list-item

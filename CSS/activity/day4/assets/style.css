@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.parent{
+    background-color: aqua;
+    color: azure;
+    height: 500px;
+    
+
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.child{
+    background-color: rgb(40, 48, 48);
+    color: azure;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

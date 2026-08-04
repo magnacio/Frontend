@@ -1,0 +1,92 @@
+1. What is CSS?
+CSS stands for Cascading Style Sheets. It's used to style and layout HTML elements — colors, fonts, spacing, positioning, responsiveness, etc.
+
+2. What is Cascading in CSS?
+Cascading means when multiple CSS rules target the same element, the browser follows a priority order (source order, specificity, !important) to decide which rule wins.
+Real-time example: If you set p { color: blue; } in an external file but then write p { color: red; } later in the same file, the paragraph turns red because the later rule cascades over the earlier one (same specificity, so last-defined wins).
+
+3. Cascading vs Specificity
+
+Cascading = the overall process/order of resolving conflicting rules (source order → specificity → importance).
+Specificity = a scoring system (ID > Class > Element) used within cascading to decide which selector "wins" when two rules conflict, regardless of order.
+
+4. Three types of CSS
+
+Inline CSS — written directly in the style attribute of an HTML tag.
+Internal CSS — written inside a <style> tag in the <head>.
+External CSS — written in a separate .css file and linked via <link>.
+
+Recommended: External CSS — because it separates structure (HTML) from presentation (CSS), is reusable across multiple pages, is easier to maintain, and improves page load speed via browser caching.
+
+5. CSS Selectors
+
+Selector	Syntax	Example
+Universal	*	* { margin: 0; padding: 0; } — resets all elements
+Element	tagname	p { color: gray; } — styles all <p> tags
+Class	.classname	.card { border: 1px solid #ccc; }
+ID	#idname	#header { background: navy; }
+Group	sel1, sel2	h1, h2, h3 { font-family: Arial; }
+Descendant	ancestor descendant	.card p { font-size: 14px; } — any <p> inside .card, at any depth
+Child	parent > child	.card > p — only direct <p> children of .card
+
+6. Class vs ID Selector
+
+Class (.name) can be reused on multiple elements; ID (#name) must be unique per page.
+ID has higher specificity than class, so ID rules override class rules if they conflict.
+Classes are used for reusable styling; IDs are used for unique elements (like a specific header) or JS hooks.
+
+7. Descendant vs Child Selector
+
+Descendant (div p) selects a <p> anywhere inside a <div>, no matter how deeply nested.
+Child (div > p) selects only <p> elements that are direct children of <div>.
+
+8. CSS Box Model
+Every element is a box made of four parts (from inside out):
+
+Content — the actual text/image
+Padding — space between content and border
+Border — the edge around the padding
+Margin — space outside the border, separating it from other elements
+
+9. Padding vs Margin
+
+Padding is space inside the border (between border and content) — affects the element's own background.
+Margin is space outside the border — creates gap between this element and neighboring elements. Margins don't have a background color; padding does.
+
+10. box-sizing: border-box
+By default (content-box), width/height apply only to content — padding and border add extra size on top. border-box makes width/height include padding and border, so the element's total rendered size stays exactly what you set. It's recommended because it makes layouts far more predictable — no more surprise overflow when you add padding.
+
+11. Display: block vs inline vs inline-block
+
+block — takes full available width, starts on a new line, respects width/height/margin/padding fully (e.g., div, p, h1).
+inline — takes only as much width as content needs, doesn't start on a new line, ignores width/height and top/bottom margin (e.g., span, a).
+inline-block — flows inline like inline, but respects width/height/padding/margin like block. Best of both — used for buttons, nav items, cards in a row.
+
+12. Can width/height be applied to div, span, button?
+
+div — Yes, fully respected (block element).
+span — No, ignored by default because span is inline; you'd need to change it to inline-block or block first.
+button — Yes, respected, because buttons render as inline-block by default.
+
+13. display:none vs visibility:hidden
+
+display:none — element is completely removed from the layout; it takes up no space, as if it doesn't exist.
+visibility:hidden — element is invisible but still occupies its space in the layout — an empty gap remains.
+
+14. Flexbox
+Flexbox is a one-dimensional layout system for arranging items in a row or column with easy alignment, spacing, and ordering.
+
+Flex Container — the parent element with display:flex applied.
+Flex Item — any direct child of the flex container.
+Main Axis — the primary direction items are laid out (row by default, or column if flex-direction:column).
+Cross Axis — perpendicular to the main axis; used for align-items.
+
+15. Centering a div with Flexbox
+
+css
+.parent {
+  display: flex;             
+  justify-content: center;  
+  align-items: center;     
+  height: 100vh;            
+}

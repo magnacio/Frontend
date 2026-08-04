@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;                     /* Flexbox */
+  justify-content: space-between;    /* brand on left, links on right */
+  align-items: center;               /* vertically centers everything */
+
+  background-color: #1f2937;
+  padding: 16px 40px;
+  flex-wrap: wrap;                   /* wraps on very small screens */
+}
+
+.nav-brand {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;              /* Flexbox for the menu items */
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-item a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.nav-item a:hover {
+  color: #ffffff;
+}
+
+/* Responsive: stack links under the brand on small screens */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    margin-top: 12px;
+    gap: 15px;
+  }
+}

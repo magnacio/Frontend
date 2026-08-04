@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #eef1f5;
+  padding: 40px;
+}
+
+.employee-container {
+  display: flex;              /* Flexbox */
+  justify-content: center;    /* required */
+  align-items: center;        /* required */
+  gap: 25px;                  /* required */
+  flex-wrap: wrap;
+}
+
+.employee-card {
+  background-color: #ffffff;
+  border: 1px solid #d8dde3;   /* Box Model: border */
+  border-radius: 10px;
+  padding: 20px;                /* Box Model: padding */
+  margin: 0;                    /* gap handles spacing instead of margin */
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.employee-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.employee-card h3 {
+  color: #2c3e50;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.dept {
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.email {
+  color: #2563eb;
+  font-size: 13px;
+}

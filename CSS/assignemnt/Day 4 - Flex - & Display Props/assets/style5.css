@@ -1,0 +1,16 @@
+.card {
+  width: 200px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+
+.hide-display {
+  display: none;
+}
+
+
+.hide-visibility {
+  visibility: hidden;
+}
