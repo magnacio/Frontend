@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.box1 {
+    background-color: #3498db;
+}
+
+.box2 {
+    background-color: #2ecc71;
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.box3 {
+    background-color: #e74c3c;
+}

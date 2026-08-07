@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.heading::before {
+  content: "★ ";
+  color: #f59e0b;
+}
+
+.heading::after {
+  content: " ✔";
+  color: #16a34a;
+}

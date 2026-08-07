@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.box {
+  width: 700px;
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+p::first-letter {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+p::first-line {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+::selection {
+  background: #fde68a;
+  color: #111827;
+}

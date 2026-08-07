@@ -1,0 +1,55 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* 1. The Sticky Navigation Bar (Core Requirement) */
+.navbar {
+    position: sticky;
+    top: 0;
+    
+    background-color: black;
+    padding: 15px;
+}
+
+/* 2. Style the links so they are readable */
+.navbar a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+/* 3. Force the page to be tall enough to scroll */
+.content {
+    height: 1500px; /* Makes the page very long artificially */
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Task 3 – Notification Badge (Absolute Position) */
+.parent {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.cart-icon {
+    font-size: 48px;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+
