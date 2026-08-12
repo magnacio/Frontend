@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #0f0202;
+}
+
+.button-container{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    background-color: #000000;
+    color: #3a0c0c;
+}
+
+.animated-button{
+  border:none;
+  padding:14px 28px;
+  font-size:15px;
+  font-weight:600;
+  border-radius:8px;
+  cursor:pointer;
+  color:#cfd6e6;
+  background:#2e3340;
+  transition: 0.5s;
+}
+.animated-button:hover{
+  transform: scale(1.1);
+}

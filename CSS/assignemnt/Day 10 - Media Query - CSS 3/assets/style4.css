@@ -1,0 +1,54 @@
+body{
+  margin:0;
+  background:#14161a;
+  color:#e8e9ec;
+  font-family:'Segoe UI', system-ui, sans-serif;
+  padding:40px 24px;
+  transition: background 0.4s;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:32px;
+  color:#5b8cff;
+  font-size:28px;
+  transition: color 0.4s, font-size 0.4s;
+}
+
+/* Desktop: one row */
+.services-container{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.service-card{
+  background:#20242e;
+  border:1px solid #2a2e37;
+  border-radius:12px;
+  padding:28px 16px;
+  text-align:center;
+  flex:1;
+  font-weight:600;
+  font-size:15px;
+}
+
+
+@media (max-width:576px){
+  body{
+    background:#101820; 
+  }
+  .section-heading{
+    color:#ffb454; 
+    font-size:20px; 
+  }
+  .services-container{
+    flex-wrap:wrap;
+    flex-direction:column;
+  }
+  .service-card{
+    width:100%;
+    font-size:13px; 
+  }
+}

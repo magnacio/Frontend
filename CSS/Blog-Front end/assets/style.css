@@ -1,0 +1,143 @@
+:root {
+    --bg: #f5f6f7;
+    --panel: #ffffff;
+    --text: #202122;
+    --muted: #54595d;
+    --accent: #0b57d0;
+    --border: #d0d7de;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #eef2ff, var(--bg));
+    line-height: 1.6;
+}
+
+.wiki-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.top-nav a {
+    margin-left: 14px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    color: var(--accent);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.sidebar {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.sidebar ul {
+    padding-left: 18px;
+}
+
+.sidebar a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 14px;
+    background: #f8faff;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+
+.content {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+.info-box {
+    background: #f8faff;
+    border: 1px solid #dbe7ff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.skills-grid article {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .top-nav a {
+        margin-left: 0;
+        margin-right: 12px;
+    }
+}

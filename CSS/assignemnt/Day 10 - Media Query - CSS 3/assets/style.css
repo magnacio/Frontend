@@ -1,0 +1,230 @@
+*{box-sizing:border-box;}
+
+
+body{
+  margin:0;
+  background:#ffffff;
+  color:#1c1f26;
+  font-family:'Segoe UI', system-ui, sans-serif;
+  font-size:16px;
+  transition: background 0.4s, font-size 0.4s;
+}
+
+
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 32px;
+  background:#1c1f26;
+  color:#fff;
+}
+
+.logo{
+  font-weight:700;
+  font-size:22px;
+}
+
+.site-nav{
+  display:flex;
+  flex-direction:row; 
+  gap:24px;
+}
+
+.site-nav a{
+  color:#e8e9ec;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.site-nav a:hover{
+  color:#5b8cff;
+}
+
+.hero-banner{
+  background:linear-gradient(135deg, #5b8cff, #7c5bff);
+  color:#fff;
+  text-align:center;
+  padding:64px 24px;
+}
+
+.hero-banner h1{
+  margin:0 0 12px;
+  font-size:36px;
+}
+
+.hero-banner p{
+  margin:0;
+  font-size:16px;
+}
+
+
+.categories{
+  padding:32px;
+  text-align:center;
+}
+
+.category-list{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:16px;
+}
+
+.category-pill{
+  background:#eef1f6;
+  border:1px solid #dfe3ea;
+  border-radius:20px;
+  padding:10px 20px;
+  font-size:14px;
+  font-weight:600;
+}
+
+
+.products{
+  padding:32px;
+  text-align:center;
+}
+
+.product-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+  margin-top:16px;
+}
+
+.product-card{
+  background:#f5f7fa;
+  border:1px solid #dfe3ea;
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+  width: calc(25% - 20px); 
+  transition: width 0.3s;
+}
+
+.product-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.product-card h3{
+  font-size:15px;
+  margin:4px 0;
+}
+
+.product-card .price{
+  color:#d97706;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.product-card button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.site-footer{
+  background:#1c1f26;
+  color:#cfd6e6;
+  padding:32px;
+}
+
+.footer-content{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:24px;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.footer-col{
+  flex:1;
+  min-width:180px;
+}
+
+.footer-col h4{
+  margin:0 0 10px;
+  color:#fff;
+}
+
+.footer-col a{
+  display:block;
+  color:#9aa0ab;
+  text-decoration:none;
+  margin-bottom:6px;
+  font-size:13px;
+}
+
+.copyright{
+  text-align:center;
+  margin:24px 0 0;
+  font-size:12px;
+  color:#6b7280;
+}
+
+
+@media (max-width:992px){
+  body{
+    background:#eef6ff; 
+  }
+  .product-card{
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width:768px){
+  body{
+    font-size:15px; 
+  }
+  .hero-banner h1{
+    font-size:30px;
+  }
+  .site-nav{
+    gap:16px;
+  }
+}
+
+@media (max-width:576px){
+  body{
+    background:#eefbee; 
+    font-size:13px; 
+  }
+
+  .site-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .site-nav{
+    flex-direction:column; 
+    gap:10px;
+  }
+
+  .hero-banner{
+    padding:40px 16px;
+  }
+  .hero-banner h1{
+    font-size:22px;
+  }
+
+  .product-card{
+    width:100%;
+  }
+
+  .footer-content{
+    flex-direction:column;
+  }
+}
