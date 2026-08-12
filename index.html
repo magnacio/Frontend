@@ -7,95 +7,297 @@
     <title>Frontend Task</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: monospace;
-            background-color: rgba(245, 233, 167, 0.657);
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f7efb2, #f1d87d);
+            color: #1d1d1d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            text-align: center;
+            padding: 20px 25px;
+            background: #111;
+            color: white;
+            border-radius: 14px;
+            letter-spacing: 1px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(3, 450px);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .task-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .task-card h2 {
+            margin: 0;
+            padding: 18px 20px;
+            color: white;
             text-align: center;
-            gap: 80px;
-            padding: 30px;
+            font-size: 1.5rem;
         }
 
-        a {
-            text-decoration: none;
-            line-height: 3;
-            color: white;
+        .task-links {
+            padding: 18px 16px 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .html {
-            background-color: crimson;
+        .task-links a {
+            text-decoration: none;
+            color: #111;
+            background: rgba(255, 255, 255, 0.82);
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.25s ease;
         }
 
-        h1 {
-            background-color: black;
-            color: white;
-            padding: 20px;
+        .task-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        .css {
-            background-color: deepskyblue;
-        }
-
-        .bootstrap {
-            background-color: olivedrab;
-        }
-
-        .tasks {}
+        .html-card h2 { background: #d8234d; }
+        .css-card h2 { background: #0ea5e9; }
+        .bootstrap-card h2 { background: #6b8f1d; }
     </style>
-
 </head>
 
 <body>
-    <div class="cards">
-        <div class="tasks">
-            <div class="html">
-                <h1>HTML TASKS</h1>
-                <a href="HTML/Day1/" target="_blank">HTML Day-1 TASK</a> <br>
-                <a href="HTML/Day2/" target="_blank">HTML Day-2 TASK</a> <br>
-                <a href="HTML/Day3/" target="_blank">HTML Day-3 TASK</a> <br>
-                <a href="HTML/Day4/" target="_blank">HTML Day-4 TASK</a> <br>
-                <a href="HTML/Day5/" target="_blank">HTML Day-5 TASK</a> <br>
-                <a href="HTML/Day6/" target="_blank">HTML Day-6 TASK</a> <br>
-                <a href="HTML/Day7/" target="_blank">HTML Day-7 TASK</a> <br>
-                <a href="HTML/Day8/" target="_blank">HTML Day-8 TASK</a> <br>
-                <a href="HTML/Day9/" target="_blank">HTML Day-9 TASK</a>
+    <div class="container">
+        <h1>Frontend Assignments</h1>
+
+        <div class="cards">
+            <div class="task-card html-card">
+                <h2>HTML Tasks</h2>
+                <div class="day-group">
+                    <h3>Day 1</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 1  Introduction, Basic Structure Root Elements, Container Elements, Child/profile.html" target="_blank">Day 1 - Task 1</a>
+                        <a href="Html/Assignment/Day 1  Introduction, Basic Structure Root Elements, Container Elements, Child/Company.html" target="_blank">Day 1 - Task 2</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 2</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 2 - Block Level - Inline - Formatic Tags - Interactive Tags/Block_Level.html" target="_blank">Day 2 - Task 1</a>
+                        <a href="Html/Assignment/Day 2 - Block Level - Inline - Formatic Tags - Interactive Tags/Formatting_tag.html" target="_blank">Day 2 - Task 2</a>
+                        <a href="Html/Assignment/Day 2 - Block Level - Inline - Formatic Tags - Interactive Tags/Inline_Elements.html" target="_blank">Day 2 - Task 3</a>
+                        <a href="Html/Assignment/Day 2 - Block Level - Inline - Formatic Tags - Interactive Tags/Interactive_Tags.html" target="_blank">Day 2 - Task 4</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 3</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 3 - Semantic Tags/task_1.html" target="_blank">Day 3 - Task 1</a>
+                        <a href="Html/Assignment/Day 3 - Semantic Tags/task_2.html" target="_blank">Day 3 - Task 2</a>
+                        <a href="Html/Assignment/Day 3 - Semantic Tags/task_3.html" target="_blank">Day 3 - Task 3</a>
+                        <a href="Html/Assignment/Day 3 - Semantic Tags/task_4.html" target="_blank">Day 3 - Task 4</a>
+                        <a href="Html/Assignment/Day 3 - Semantic Tags/task_5.html" target="_blank">Day 3 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 4</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 4 - Attributes - href - src/task1.html" target="_blank">Day 4 - Task 1</a>
+                        <a href="Html/Assignment/Day 4 - Attributes - href - src/task2.html" target="_blank">Day 4 - Task 2</a>
+                        <a href="Html/Assignment/Day 4 - Attributes - href - src/task3.html" target="_blank">Day 4 - Task 3</a>
+                        <a href="Html/Assignment/Day 4 - Attributes - href - src/task4.html" target="_blank">Day 4 - Task 4</a>
+                        <a href="Html/Assignment/Day 4 - Attributes - href - src/task5.html" target="_blank">Day 4 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 5</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 5 - HTML List , Form , Table/task_website.html" target="_blank">Day 5 - Task 1</a>
+                        <a href="Html/Assignment/Day 5 - HTML List , Form , Table/task2_website.html" target="_blank">Day 5 - Task 2</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 6</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day_6_Form_Handling_and_Form_Elements/Registration.html" target="_blank">Day 6 - Task 1</a>
+                        <a href="Html/Assignment/Day_6_Form_Handling_and_Form_Elements/Login.html" target="_blank">Day 6 - Task 2</a>
+                        <a href="Html/Assignment/Day_6_Form_Handling_and_Form_Elements/Job_Application.html" target="_blank">Day 6 - Task 3</a>
+                        <a href="Html/Assignment/Day_6_Form_Handling_and_Form_Elements/Feeback_Form.html" target="_blank">Day 6 - Task 4</a>
+                        <a href="Html/Assignment/Day_6_Form_Handling_and_Form_Elements/Contact_Form.html" target="_blank">Day 6 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 7</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day7-HTML-Table_&_Form/task1.html" target="_blank">Day 7 - Task 1</a>
+                        <a href="Html/Assignment/Day7-HTML-Table_&_Form/task2.html" target="_blank">Day 7 - Task 2</a>
+                        <a href="Html/Assignment/Day7-HTML-Table_&_Form/task3.html" target="_blank">Day 7 - Task 3</a>
+                        <a href="Html/Assignment/Day7-HTML-Table_&_Form/task4.html" target="_blank">Day 7 - Task 4</a>
+                        <a href="Html/Assignment/Day7-HTML-Table_&_Form/task5.html" target="_blank">Day 7 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 8</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 8 - HTML_Meta_Tags_Doc_Type_and_HTML5.zip" target="_blank">Day 8 - ZIP</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 9</h3>
+                    <div class="task-links">
+                        <a href="Html/Assignment/Day 9 - Media_Tags_and_Elements/simple-task1-image-gallery.html" target="_blank">Day 9 - Task 1</a>
+                        <a href="Html/Assignment/Day 9 - Media_Tags_and_Elements/simple-task2-audio-player.html" target="_blank">Day 9 - Task 2</a>
+                        <a href="Html/Assignment/Day 9 - Media_Tags_and_Elements/simple-task3-video-player.html" target="_blank">Day 9 - Task 3</a>
+                        <a href="Html/Assignment/Day 9 - Media_Tags_and_Elements/simple-task4-youtube-and-map.html" target="_blank">Day 9 - Task 4</a>
+                        <a href="Html/Assignment/Day 9 - Media_Tags_and_Elements/simple-task5-media-showcase.html" target="_blank">Day 9 - Task 5</a>
+                    </div>
+                </div>
             </div>
-        </div>
 
+            <div class="task-card css-card">
+                <h2>CSS Tasks</h2>
+                <div class="day-group">
+                    <h3>Day 1</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/challenge_colored_boxes.html" target="_blank">Day 1 - Challenge</a>
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/task1_profile_card.html" target="_blank">Day 1 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/task2_company_info.html" target="_blank">Day 1 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/task3_student_id_card.html" target="_blank">Day 1 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/task4_departments.html" target="_blank">Day 1 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 1 - CSS Basics Properties, Values, Selectors (class, id, element)/task5_favorite_things.html" target="_blank">Day 1 - Task 5</a>
+                    </div>
+                </div>
 
-        <div class="tasks">
-            <div class="css">
-                <h1>CSS TASKS</h1>
-                <a href="CSS/Day1/challenge.html" target="_blank">CSS Day-1 TASK</a> <br>
-                <a href="CSS/Day2/" target="_blank">CSS Day-2 TASK</a> <br>
-                <a href="CSS/Day3/" target="_blank">CSS Day-3 TASK</a> <br>
-                <a href="CSS/Day4/" target="_blank">CSS Day-4 TASK</a> <br>
-                <a href="CSS/Day5/" target="_blank">CSS Day-5 TASK</a> <br>
-                <a href="CSS/Day6/" target="_blank">CSS Day-6 TASK</a> <br>
-                <a href="CSS/Day7/" target="_blank">CSS Day-7 TASK</a> <br>
-                <a href="CSS/Day8/" target="_blank">CSS Day-8 TASK</a> <br>
-                <a href="CSS/Day9/" target="_blank">CSS Day-9 TASK</a> <br>
-                <a href="CSS/Day10/" target="_blank">CSS Day-10 TASK</a> <br>
-                <a href="CSS/Test-CSS/" target="_blank">CSS Test TASK</a>
+                <div class="day-group">
+                    <h3>Day 2</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task1.html" target="_blank">Day 2 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task2.html" target="_blank">Day 2 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task3.html" target="_blank">Day 2 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task4.html" target="_blank">Day 2 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task5.html" target="_blank">Day 2 - Task 5</a>
+                        <a href="CSS/assignemnt/Day 2 - Css - Selectors and Pros - Values/task6.html" target="_blank">Day 2 - Task 6</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 3</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task1.html" target="_blank">Day 3 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task2.html" target="_blank">Day 3 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task3.html" target="_blank">Day 3 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task4.html" target="_blank">Day 3 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task5.html" target="_blank">Day 3 - Task 5</a>
+                        <a href="CSS/assignemnt/Day 3 - Box Model margin, padding, border, content/task6.html" target="_blank">Day 3 - Task 6</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 4</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 4 - Flex - & Display Props/task1.html" target="_blank">Day 4 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 4 - Flex - & Display Props/task2.html" target="_blank">Day 4 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 4 - Flex - & Display Props/task4.html" target="_blank">Day 4 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 4 - Flex - & Display Props/task5.html" target="_blank">Day 4 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 5</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 5 - Flex Desing and Warpping/task.html" target="_blank">Day 5 - Task</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 6</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 6 - CSS - Redios - Size - Positions/task1.html" target="_blank">Day 6 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 6 - CSS - Redios - Size - Positions/task2.html" target="_blank">Day 6 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 6 - CSS - Redios - Size - Positions/task3.html" target="_blank">Day 6 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 6 - CSS - Redios - Size - Positions/task4.html" target="_blank">Day 6 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 6 - CSS - Redios - Size - Positions/task5.html" target="_blank">Day 6 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 7</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/day7/task1.html" target="_blank">Day 7 - Task 1</a>
+                        <a href="CSS/assignemnt/day7/task2.html" target="_blank">Day 7 - Task 2</a>
+                        <a href="CSS/assignemnt/day7/task3.html" target="_blank">Day 7 - Task 3</a>
+                        <a href="CSS/assignemnt/day7/task4.html" target="_blank">Day 7 - Task 4</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 8</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/day8/task1-button-hover.html" target="_blank">Day 8 - Task 1</a>
+                        <a href="CSS/assignemnt/day8/task2-student-form.html" target="_blank">Day 8 - Task 2</a>
+                        <a href="CSS/assignemnt/day8/task3-student-list.html" target="_blank">Day 8 - Task 3</a>
+                        <a href="CSS/assignemnt/day8/task4-before-after.html" target="_blank">Day 8 - Task 4</a>
+                        <a href="CSS/assignemnt/day8/task5-paragraph-styling.html" target="_blank">Day 8 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 9</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 9 - Transition & Transfrom - Css Animations/task1.html" target="_blank">Day 9 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 9 - Transition & Transfrom - Css Animations/task2.html" target="_blank">Day 9 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 9 - Transition & Transfrom - Css Animations/task3.html" target="_blank">Day 9 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 9 - Transition & Transfrom - Css Animations/task4.html" target="_blank">Day 9 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 9 - Transition & Transfrom - Css Animations/task5.html" target="_blank">Day 9 - Task 5</a>
+                    </div>
+                </div>
+
+                <div class="day-group">
+                    <h3>Day 10</h3>
+                    <div class="task-links">
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/task1.html" target="_blank">Day 10 - Task 1</a>
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/task2.html" target="_blank">Day 10 - Task 2</a>
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/task3.html" target="_blank">Day 10 - Task 3</a>
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/task4.html" target="_blank">Day 10 - Task 4</a>
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/task5.html" target="_blank">Day 10 - Task 5</a>
+                        <a href="CSS/assignemnt/Day 10 - Media Query - CSS 3/special_task.html" target="_blank">Day 10 - Special Task</a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-
-        <div class="tasks">
-            <div class="bootstrap">
-                <h1>BOOTSTRAP TASKS</h1>
-                <a href="BOOTSTRAP/Day1/" target="_blank">BOOTSTRAP Day-1 TASK</a>
+            <div class="task-card bootstrap-card">
+                <h2>Bootstrap Tasks</h2>
+                <div class="task-links">
+                    <a href="Bootstrap/Day1/" target="_blank">BOOTSTRAP Day-1 TASK</a>
+                </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
