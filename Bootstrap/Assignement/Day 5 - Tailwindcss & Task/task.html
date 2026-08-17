@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distance — Fitness Tracker</title>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased font-[Inter] flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <nav class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </span>
+        <span class="text-lg font-bold tracking-tight">Distance</span>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-500">
+        <a href="#overview" class="hover:text-slate-900 transition-colors">Overview</a>
+        <a href="#log-entry" class="hover:text-slate-900 transition-colors">Log Activity</a>
+        <a href="#history" class="hover:text-slate-900 transition-colors">History</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="flex-grow">
+
+    <section class="bg-white border-b border-slate-200 py-14">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 border border-slate-200 mb-5">
+          Personal Fitness Log
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+          Every Kilometer, Tracked
+        </h1>
+        <p class="text-slate-500 text-sm sm:text-base max-w-lg mx-auto">
+          Log your runs, walks, and rides. Watch your weekly goal progress and total distance grow over time.
+        </p>
+      </div>
+    </section>
+
+
+
+    <section id="overview" class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+
+      <!-- Stat cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Total Distance</p>
+          <p class="text-2xl font-extrabold">18.6 km</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Total Entries</p>
+          <p class="text-2xl font-extrabold">4</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-1">Avg. per Entry</p>
+          <p class="text-2xl font-extrabold">4.7 km</p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold">Weekly Goal</h2>
+          <span class="text-sm text-slate-400">18.6 km of 20 km</span>
+        </div>
+        <div class="w-full h-3 rounded-full bg-slate-100 overflow-hidden">
+          <div class="h-full bg-slate-900 rounded-full w-[93%]"></div>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">93% of this week's goal logged</p>
+      </div>
+
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200">
+        <h2 class="text-sm font-bold mb-4">Distance by Activity</h2>
+        <div class="space-y-3">
+
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="font-medium">Running</span>
+              <span class="text-slate-400">10.2 km</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+              <div class="h-full bg-slate-700 rounded-full w-[55%]"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="font-medium">Cycling</span>
+              <span class="text-slate-400">6.4 km</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+              <div class="h-full bg-slate-700 rounded-full w-[34%]"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="font-medium">Walking</span>
+              <span class="text-slate-400">2.0 km</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+              <div class="h-full bg-slate-700 rounded-full w-[11%]"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section id="log-entry" class="max-w-4xl mx-auto px-4 sm:px-6 pb-10">
+      <div class="p-6 rounded-2xl bg-white border border-slate-200">
+        <h2 class="text-sm font-bold mb-4">Log New Activity</h2>
+
+        <form class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Activity</label>
+            <select class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:border-slate-900">
+              <option value="Running">Running</option>
+              <option value="Walking">Walking</option>
+              <option value="Cycling">Cycling</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Distance (km)</label>
+            <input type="number" min="0" step="0.1" placeholder="e.g. 5.2"
+              class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:border-slate-900">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Date</label>
+            <input type="date"
+              class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:border-slate-900">
+          </div>
+
+          <button type="submit" class="sm:col-span-3 w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors">
+            Add Entry
+          </button>
+        </form>
+      </div>
+    </section>
+
+
+    <section id="history" class="max-w-4xl mx-auto px-4 sm:px-6 pb-14">
+      <div class="p-6 rounded-2xl bg-white border border-slate-200">
+        <h2 class="text-sm font-bold mb-4">History</h2>
+
+        <div class="space-y-2">
+
+          <div class="flex items-center justify-between border border-slate-200 rounded-lg p-3">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </span>
+              <div>
+                <p class="font-semibold text-sm">Running — 5.2 km</p>
+                <p class="text-slate-400 text-xs">2026-08-14</p>
+              </div>
+            </div>
+            <a href="#" class="text-slate-400 hover:text-red-600 text-xs font-semibold transition-colors">Remove</a>
+          </div>
+
+          <div class="flex items-center justify-between border border-slate-200 rounded-lg p-3">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="6" cy="17" r="3" /><circle cx="18" cy="17" r="3" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 17l4-8h5l3 8M10 9h4" />
+                </svg>
+              </span>
+              <div>
+                <p class="font-semibold text-sm">Cycling — 6.4 km</p>
+                <p class="text-slate-400 text-xs">2026-08-13</p>
+              </div>
+            </div>
+            <a href="#" class="text-slate-400 hover:text-red-600 text-xs font-semibold transition-colors">Remove</a>
+          </div>
+
+          <div class="flex items-center justify-between border border-slate-200 rounded-lg p-3">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </span>
+              <div>
+                <p class="font-semibold text-sm">Running — 5.0 km</p>
+                <p class="text-slate-400 text-xs">2026-08-11</p>
+              </div>
+            </div>
+            <a href="#" class="text-slate-400 hover:text-red-600 text-xs font-semibold transition-colors">Remove</a>
+          </div>
+
+          <div class="flex items-center justify-between border border-slate-200 rounded-lg p-3">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="5" r="2" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 8l-3 4 2 2-1 6m3-8l2 2 3-1m-5-1l2 6 4 2" />
+                </svg>
+              </span>
+              <div>
+                <p class="font-semibold text-sm">Walking — 2.0 km</p>
+                <p class="text-slate-400 text-xs">2026-08-10</p>
+              </div>
+            </div>
+            <a href="#" class="text-slate-400 hover:text-red-600 text-xs font-semibold transition-colors">Remove</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="bg-white border-t border-slate-200 py-6">
+    <p class="text-center text-xs text-slate-400">
+      Built with Tailwind CSS
+    </p>
+  </footer>
+
+</body>
+</html>
