@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Day 10 — ES6 &amp; ES6+ | Ravi's JS Notebook</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117;
+    --panel:#131a22;
+    --panel-2:#0f151c;
+    --line:#22303c;
+    --amber:#e9b949;
+    --teal:#57d6c9;
+    --text:#e6edf3;
+    --muted:#8b98a5;
+  }
+  *{scrollbar-width:thin;scrollbar-color:var(--line) transparent;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .code-block{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;position:relative;}
+  .code-block pre{padding:1.1rem 1.25rem;overflow-x:auto;font-size:0.85rem;line-height:1.6;}
+  .kw{color:#ff7b72;}
+  .str{color:#a5d6ff;}
+  .fn{color:var(--amber);}
+  .cm{color:var(--muted);}
+  .num{color:var(--teal);}
+  .navlink{border-left:2px solid transparent;transition:.15s;}
+  .navlink:hover{border-left-color:var(--muted);color:var(--text);}
+  .navlink.active{border-left-color:var(--amber);color:var(--amber);background:rgba(233,185,73,0.06);}
+  .task-num{font-family:'JetBrains Mono',monospace;color:var(--amber);}
+  .copy-btn{transition:.15s;}
+  .copy-btn:hover{background:var(--line);}
+  section{scroll-margin-top:2rem;}
+  ::selection{background:rgba(87,214,201,0.25);}
+</style>
+</head>
+<body class="min-h-screen">
+
+<div class="flex">
+
+  <aside class="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-[var(--line)] bg-[var(--panel)] px-5 py-6">
+    <div class="mb-8">
+      <p class="mono text-xs text-[var(--muted)] tracking-widest">JS NOTEBOOK</p>
+      <h1 class="text-lg font-semibold mt-1">Day 10 <span class="text-[var(--amber)]">/</span> ES6+</h1>
+      <p class="text-xs text-[var(--muted)] mt-1">10 topics · 10 logic tasks</p>
+    </div>
+    <nav id="sidenav" class="flex flex-col gap-0.5 text-sm text-[var(--muted)] overflow-y-auto pr-2">
+      <a href="#t1" class="navlink px-3 py-1.5 rounded-r">01 · var / let / const</a>
+      <a href="#t2" class="navlink px-3 py-1.5 rounded-r">02 · Arrow functions</a>
+      <a href="#t3" class="navlink px-3 py-1.5 rounded-r">03 · Destructuring</a>
+      <a href="#t4" class="navlink px-3 py-1.5 rounded-r">04 · Rest vs Spread</a>
+      <a href="#t5" class="navlink px-3 py-1.5 rounded-r">05 · Default params</a>
+      <a href="#t6" class="navlink px-3 py-1.5 rounded-r">06 · Classes</a>
+      <a href="#t7" class="navlink px-3 py-1.5 rounded-r">07 · Promises</a>
+      <a href="#t8" class="navlink px-3 py-1.5 rounded-r">08 · ?. and ??</a>
+      <a href="#t9" class="navlink px-3 py-1.5 rounded-r">09 · Array methods</a>
+      <a href="#t10" class="navlink px-3 py-1.5 rounded-r">10 · ES5 → ES6+</a>
+    </nav>
+    <div class="mt-auto pt-6 text-xs text-[var(--muted)] mono">Ravi · JavaScript Fundamentals</div>
+  </aside>
+
+  <main class="flex-1 max-w-4xl mx-auto px-6 sm:px-10 py-12 lg:py-16">
+
+    <header class="mb-14">
+      <p class="mono text-xs text-[var(--teal)] tracking-widest mb-3">DAY 10 — INTERVIEW TASKS</p>
+      <h1 class="text-4xl sm:text-5xl font-semibold leading-tight">ES6 &amp; ES6+<br/><span class="text-[var(--muted)]">in ten small proofs.</span></h1>
+      <p class="text-[var(--muted)] mt-4 max-w-xl">Each task pairs a short topic explanation with the runnable logic that demonstrates it. Open the console to see the output.</p>
+    </header>
+
+    <!-- TASK 1 -->
+    <section id="t1" class="mb-16">
+      <p class="task-num text-sm mb-2">01</p>
+      <h2 class="text-2xl font-semibold mb-4">var, let, const</h2>
+      <div class="grid sm:grid-cols-3 gap-3 mb-5 text-sm">
+        <div class="bg-[var(--panel)] border border-[var(--line)] rounded-lg p-4">
+          <p class="mono text-[var(--amber)] mb-2">var</p>
+          <ul class="text-[var(--muted)] space-y-1 leading-relaxed">
+            <li>Function / global scoped</li>
+            <li>Redeclare: allowed</li>
+            <li>Reassign: allowed</li>
+            <li>Hoisted &amp; initialized as <span class="mono">undefined</span></li>
+            <li>No TDZ</li>
+          </ul>
+        </div>
+        <div class="bg-[var(--panel)] border border-[var(--line)] rounded-lg p-4">
+          <p class="mono text-[var(--teal)] mb-2">let</p>
+          <ul class="text-[var(--muted)] space-y-1 leading-relaxed">
+            <li>Block scoped</li>
+            <li>Redeclare: not allowed</li>
+            <li>Reassign: allowed</li>
+            <li>Hoisted, not initialized</li>
+            <li>In TDZ until declared</li>
+          </ul>
+        </div>
+        <div class="bg-[var(--panel)] border border-[var(--line)] rounded-lg p-4">
+          <p class="mono text-[#ff7b72] mb-2">const</p>
+          <ul class="text-[var(--muted)] space-y-1 leading-relaxed">
+            <li>Block scoped</li>
+            <li>Redeclare: not allowed</li>
+            <li>Reassign: not allowed</li>
+            <li>Hoisted, not initialized</li>
+            <li>In TDZ until declared</li>
+          </ul>
+        </div>
+      </div>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>scope-demo.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>var globalVar = "var is function/global scoped";
+let globalLet = "let is block scoped";
+const globalConst = "const cannot be reassigned";
+
+var globalVar = "re-declared without error";
+console.log(globalVar);
+
+function scopeDemo() {
+  var funcVar = "only visible inside this function";
+  console.log(funcVar);
+}
+scopeDemo();
+
+if (true) {
+  var leakedVar = "var ignores block scope";
+  let blockLet = "let respects block scope";
+  const blockConst = "const respects block scope";
+  console.log(blockLet, blockConst);
+}
+console.log(leakedVar);
+
+const fixedConst = "cannot change";
+try {
+  fixedConst = "attempt";
+} catch (e) {
+  console.log(e.message);
+}
+
+console.log(tdzExampleVar);
+var tdzExampleVar = "var is hoisted as undefined";
+
+try {
+  console.log(tdzExampleLet);
+  let tdzExampleLet = "let stays in the TDZ";
+} catch (e) {
+  console.log(e.message);
+}</code></pre></div>
+    </section>
+
+    <!-- TASK 2 -->
+    <section id="t2" class="mb-16">
+      <p class="task-num text-sm mb-2">02</p>
+      <h2 class="text-2xl font-semibold mb-4">Arrow functions</h2>
+      <p class="text-[var(--muted)] mb-5 leading-relaxed">An explicit return keeps the function body in braces with a <span class="mono text-[var(--text)]">return</span> statement. An implicit return drops the braces and the value of the single expression is returned automatically.</p>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>arrows.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>const addExplicit = (a, b) => {
+  return a + b;
+};
+
+const squareExplicit = (n) => {
+  return n * n;
+};
+
+const addImplicit = (a, b) => a + b;
+const squareImplicit = (n) => n * n;
+
+console.log(addExplicit(3, 4));
+console.log(squareImplicit(5));</code></pre></div>
+    </section>
+
+    <!-- TASK 3 -->
+    <section id="t3" class="mb-16">
+      <p class="task-num text-sm mb-2">03</p>
+      <h2 class="text-2xl font-semibold mb-4">Array &amp; object destructuring</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>destructuring.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>const numbers = [10, 20, 30];
+const [first, second, third] = numbers;
+console.log(first, second, third);
+
+const student = {
+  name: "Ravi",
+  age: 25,
+  course: "JavaScript"
+};
+const { name, age, course } = student;
+console.log(name, age, course);</code></pre></div>
+    </section>
+
+    <!-- TASK 4 -->
+    <section id="t4" class="mb-16">
+      <p class="task-num text-sm mb-2">04</p>
+      <h2 class="text-2xl font-semibold mb-4">Rest parameter vs spread syntax</h2>
+      <p class="text-[var(--muted)] mb-5 leading-relaxed">Rest <span class="mono text-[var(--text)]">(...args)</span> collects many arguments into a single array inside a function signature or destructuring pattern. Spread <span class="mono text-[var(--text)]">(...arr)</span> does the opposite — it expands an array or object into individual elements, used in calls, array literals, or object literals.</p>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>rest-spread.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>function sumAll(...nums) {
+  return nums.reduce((total, n) => total + n, 0);
+}
+console.log(sumAll(1, 2, 3, 4));
+
+const partA = [1, 2, 3];
+const partB = [4, 5, 6];
+const merged = [...partA, ...partB];
+console.log(merged);</code></pre></div>
+    </section>
+
+    <!-- TASK 5 -->
+    <section id="t5" class="mb-16">
+      <p class="task-num text-sm mb-2">05</p>
+      <h2 class="text-2xl font-semibold mb-4">Default parameters + template literals</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>register.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>function registerStudent(name, course, city = "Chennai") {
+  return `${name} has enrolled in ${course} at our ${city} center.`;
+}
+
+console.log(registerStudent("Ravi", "JavaScript"));
+console.log(registerStudent("Anu", "React", "Bangalore"));</code></pre></div>
+    </section>
+
+    <!-- TASK 6 -->
+    <section id="t6" class="mb-16">
+      <p class="task-num text-sm mb-2">06</p>
+      <h2 class="text-2xl font-semibold mb-4">Student class</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>student.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>class Student {
+  constructor(name, age, mark) {
+    this.name = name;
+    this.age = age;
+    this.mark = mark;
+  }
+
+  displayDetails() {
+    console.log(`${this.name}, Age: ${this.age}, Mark: ${this.mark}`);
+  }
+}
+
+const student1 = new Student("Ravi", 25, 88);
+const student2 = new Student("Anu", 23, 92);
+
+student1.displayDetails();
+student2.displayDetails();</code></pre></div>
+    </section>
+
+    <!-- TASK 7 -->
+    <section id="t7" class="mb-16">
+      <p class="task-num text-sm mb-2">07</p>
+      <h2 class="text-2xl font-semibold mb-4">Promises: .then() and async/await</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>load-data.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>function loadData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data Loaded");
+    }, 1000);
+  });
+}
+
+loadData().then((result) => console.log(result));
+
+async function loadDataAsync() {
+  const result = await loadData();
+  console.log(result);
+}
+loadDataAsync();</code></pre></div>
+    </section>
+
+    <!-- TASK 8 -->
+    <section id="t8" class="mb-16">
+      <p class="task-num text-sm mb-2">08</p>
+      <h2 class="text-2xl font-semibold mb-4">Optional chaining &amp; nullish coalescing</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>safe-access.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>const user = {
+  name: "Ravi"
+};
+
+const city = user?.address?.city ?? "City Not Available";
+console.log(city);</code></pre></div>
+    </section>
+
+    <!-- TASK 9 -->
+    <section id="t9" class="mb-16">
+      <p class="task-num text-sm mb-2">09</p>
+      <h2 class="text-2xl font-semibold mb-4">Array methods</h2>
+      <div class="code-block"><div class="flex justify-between items-center px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono"><span>array-methods.js</span><button class="copy-btn px-2 py-1 rounded bg-[var(--panel)] border border-[var(--line)]" onclick="copyCode(this)">copy</button></div><pre class="mono"><code>const numbers = [10, 25, 30, 45, 50, 65];
+
+const greaterThan30 = numbers.filter((n) => n > 30);
+console.log(greaterThan30);
+
+const firstGreaterThan40 = numbers.find((n) => n > 40);
+console.log(firstGreaterThan40);
+
+const has50 = numbers.includes(50);
+console.log(has50);
+
+const doubled = numbers.map((n) => n * 2);
+console.log(doubled);</code></pre></div>
+    </section>
+
+    <!-- TASK 10 -->
+    <section id="t10" class="mb-8">
+      <p class="task-num text-sm mb-2">10</p>
+      <h2 class="text-2xl font-semibold mb-4">ES5 → ES6+</h2>
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+        <div class="code-block"><div class="px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono">before.js — ES5</div><pre class="mono text-[var(--muted)]"><code>var name = "Ravi";
+var age = 25;
+
+var student = {
+  name: name,
+  age: age
+};
+
+var greet = function(name) {
+  return "Hello " + name;
+};
+
+console.log(greet(name));</code></pre></div>
+        <div class="code-block"><div class="px-4 py-2 border-b border-[var(--line)] text-xs text-[var(--muted)] mono">after.js — ES6+</div><pre class="mono"><code>const name = "Ravi";
+const age = 25;
+
+const student = { name, age };
+
+const greet = (name) => `Hello ${name}`;
+
+console.log(greet(name));</code></pre></div>
+      </div>
+      <div class="bg-[var(--panel)] border border-[var(--line)] rounded-lg p-5">
+        <p class="mono text-xs text-[var(--amber)] mb-3 tracking-widest">WHY THE ES6+ VERSION WINS</p>
+        <ul class="text-sm text-[var(--muted)] space-y-2 leading-relaxed list-disc list-inside">
+          <li><span class="text-[var(--text)]">const/let</span> replace var, giving block scope and preventing accidental reassignment or redeclaration.</li>
+          <li>Template literals replace string concatenation, making interpolated strings easier to read and edit.</li>
+          <li>Object shorthand <span class="mono text-[var(--text)]">{ name, age }</span> removes the repeated key: value pairing when the variable name matches the property name.</li>
+          <li>Arrow functions are shorter, and for callbacks they don't rebind <span class="mono text-[var(--text)]">this</span> the way a regular function expression does.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="text-xs text-[var(--muted)] mono border-t border-[var(--line)] pt-6 mt-4">10 topics · 10 logic tasks · Day 10 submission</footer>
+
+  </main>
+</div>
+
+<script>
+function copyCode(btn) {
+  const code = btn.closest('.code-block').querySelector('code').innerText;
+  navigator.clipboard.writeText(code);
+  const original = btn.innerText;
+  btn.innerText = 'copied';
+  setTimeout(() => { btn.innerText = original; }, 1200);
+}
+
+const links = document.querySelectorAll('#sidenav a');
+const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+function onScroll() {
+  let idx = 0;
+  const y = window.scrollY + 120;
+  sections.forEach((sec, i) => { if (sec && sec.offsetTop <= y) idx = i; });
+  links.forEach(l => l.classList.remove('active'));
+  links[idx].classList.add('active');
+}
+window.addEventListener('scroll', onScroll);
+onScroll();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Show/Hide, Color Toggle, Card Toggle</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h2 {
+    margin-top: 40px;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+
+  #para1 {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  #para1.show {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    background-color: red;
+    transition: background-color 0.4s ease;
+  }
+  .box.green {
+    background-color: green;
+  }
+
+  .card {
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .card img {
+    width: 100%;
+    display: block;
+  }
+  .card-body {
+    padding: 12px 16px;
+  }
+  .card-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  .card-details.show {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+
+  <h2>1. Show / Hide Content</h2>
+  <button id="toggleBtn1">Show Paragraph</button>
+  <p id="para1">
+    This is the hidden paragraph. It smoothly appears when the button
+    is clicked, and smoothly disappears when clicked again.
+  </p>
+
+  <h2>2. Color Toggle</h2>
+  <button id="toggleBtn2">Toggle Color</button>
+  <div class="box" id="box"></div>
+
+  <h2>3. Smooth Card Toggle</h2>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww" alt="Card image">
+    <div class="card-body">
+      <h3>Card Heading</h3>
+      <p>This is a short description of the card content shown by default.</p>
+      <div class="card-details" id="cardDetails">
+        <p>
+          These are the extra details revealed when "Show Details" is
+          clicked. Click again to hide them smoothly.
+        </p>
+      </div>
+      <button id="detailsBtn">Show Details</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
