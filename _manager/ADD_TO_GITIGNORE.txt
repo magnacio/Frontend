@@ -1,0 +1,5 @@
+# Frontend SLA local assignment manager
+_manager/.venv/
+_manager/backups/
+_manager/exports/
+_manager/__pycache__/

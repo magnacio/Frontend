@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Frontend SLA · Assignment Manager</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">SLA</span>
+    <div><strong>Assignment Manager</strong><small>{{ data.project }}</small></div>
+  </div>
+  <div class="top-actions">
+    <a href="{{ url_for('public_index') }}" target="_blank" class="button secondary">Open public site ↗</a>
+    <form method="post" action="{{ url_for('rebuild') }}"><button class="button secondary">Scan & rebuild</button></form>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="intro">
+    <div>
+      <p class="eyebrow">FILESYSTEM-FIRST MANAGER</p>
+      <h1>Your folders are the database.</h1>
+      <p class="lead">This manager reads the real <code>Bootstrap</code>, <code>CSS</code>, <code>Html</code>, <code>JS</code> and <code>Tailwind</code> folders in <strong>{{ data.project }}</strong>. Add files here and the root <code>index.html</code> is rebuilt automatically.</p>
+    </div>
+    <div class="root-card">
+      <span>Detected project</span>
+      <strong>{{ data.project }}</strong>
+      <small>{{ data.subject_names|join(' · ') }}</small>
+    </div>
+  </section>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <section class="messages">
+    {% for kind, message in messages %}
+    <div class="message {{ kind }}">{{ message }}</div>
+    {% endfor %}
+  </section>
+  {% endif %}
+  {% endwith %}
+
+  <section class="stats">
+    <article><span>Subjects</span><strong>{{ data.subjects|length }}</strong></article>
+    <article><span>HTML pages</span><strong>{{ data.html_count }}</strong></article>
+    <article><span>Public links</span><strong>{{ data.total_links }}</strong></article>
+    <article><span>Last scan</span><strong class="date">{{ data.generated_at }}</strong></article>
+  </section>
+
+  <div class="layout">
+    <section class="panel upload-panel">
+      <div class="panel-head">
+        <div><p class="eyebrow">ADD TODAY'S WORK</p><h2>Upload assignment</h2></div>
+        <span class="number">01</span>
+      </div>
+
+      <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="upload-form" id="uploadForm">
+        <div class="field">
+          <label for="subject">Subject folder</label>
+          <select name="subject" id="subject" required>
+            <option value="">Choose folder</option>
+            {% for subject in data.subject_names %}
+            <option value="{{ subject }}">{{ subject }}</option>
+            {% endfor %}
+          </select>
+          <small>These are read directly from the root of Frontend_SLA.</small>
+        </div>
+
+        <div class="field">
+          <label for="baseFolder">Existing destination</label>
+          <select name="base_folder" id="baseFolder" disabled>
+            <option value=".">Choose a subject first</option>
+          </select>
+          <small>Pick the existing Assignment / assignemnt / day folder you already use.</small>
+        </div>
+
+        <div class="field full">
+          <label for="newFolder">New folder inside that destination <em>optional</em></label>
+          <input name="new_folder" id="newFolder" placeholder="Example: Day 17 - JavaScript DOM">
+          <small>You can also enter nested folders, for example <code>Assignment/Day 17 - DOM</code>.</small>
+        </div>
+
+        <label class="dropzone full" id="dropzone">
+          <input type="file" name="files" id="files" multiple required>
+          <div class="drop-icon">＋</div>
+          <strong id="dropTitle">Drop files here or click to browse</strong>
+          <span id="dropText">HTML, CSS, JS, images, PDF, or a ZIP containing the complete assignment project.</span>
+        </label>
+
+        <div class="options full">
+          <label><input type="checkbox" name="extract_zip" checked> Extract ZIP projects automatically</label>
+          <label><input type="checkbox" name="overwrite"> Overwrite files with the same name</label>
+        </div>
+
+        <div class="upload-summary full" id="destinationPreview">
+          Destination: choose a subject and folder.
+        </div>
+
+        <button class="button primary full" type="submit">Upload assignment & rebuild index.html →</button>
+      </form>
+    </section>
+
+    <aside class="side-stack">
+      <section class="panel compact">
+        <div class="panel-head">
+          <div><p class="eyebrow">GITHUB</p><h2>Public export</h2></div>
+          <span class="number">02</span>
+        </div>
+        <div class="panel-body">
+          <p class="muted">Creates a ZIP containing your public repository files while excluding <code>.git</code>, the manager, virtual environments and development folders.</p>
+          <form action="{{ url_for('export') }}" method="post">
+            <button class="button secondary wide">Download GitHub-ready ZIP</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel compact">
+        <div class="panel-head"><div><p class="eyebrow">HOW IT WORKS</p><h2>Daily flow</h2></div></div>
+        <div class="steps">
+          <div><b>1</b><span>Select <strong>JS</strong>, <strong>Html</strong>, <strong>CSS</strong>, etc.</span></div>
+          <div><b>2</b><span>Select the existing parent folder.</span></div>
+          <div><b>3</b><span>Create today's Day folder if needed.</span></div>
+          <div><b>4</b><span>Upload the assignment or ZIP.</span></div>
+          <div><b>5</b><span>The root index is regenerated automatically.</span></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <section class="panel assignments">
+    <div class="panel-head">
+      <div><p class="eyebrow">PROJECT SCAN</p><h2>Assignments found on disk</h2></div>
+      <div class="search-wrap"><input id="search" type="search" placeholder="Search subject, day, file..."></div>
+    </div>
+
+    <div class="subject-tabs" id="subjectTabs">
+      <button class="tab active" data-filter="all">All</button>
+      {% for subject in data.subjects %}
+      <button class="tab" data-filter="{{ subject.name|lower }}">{{ subject.label }} <span>{{ subject.count }}</span></button>
+      {% endfor %}
+    </div>
+
+    <div class="assignment-table">
+      <div class="table-row table-head-row">
+        <div>Subject</div><div>Day</div><div>Assignment</div><div>Path</div><div>Actions</div>
+      </div>
+      {% for subject in data.subjects %}
+        {% for day in subject.days %}
+          {% for task in day.tasks %}
+          <div class="table-row assignment-row"
+               data-subject="{{ subject.name|lower }}"
+               data-search="{{ (subject.label ~ ' ' ~ day.label ~ ' ' ~ task.label ~ ' ' ~ task.path)|lower }}">
+            <div><span class="subject-chip">{{ subject.label }}</span></div>
+            <div><span class="day-text">{{ day.label }}</span></div>
+            <div class="task-name">
+              <strong>{{ task.label }}</strong>
+              <small>{{ task.filename }}</small>
+            </div>
+            <div class="path-cell" title="{{ task.path }}">{{ task.path }}</div>
+            <div class="row-actions">
+              <a class="icon-btn" href="{{ url_for('public_file', filename=task.path) }}" target="_blank">Open</a>
+              <button class="icon-btn rename-btn" type="button" data-path="{{ task.path }}" data-label="{{ task.label }}">Rename label</button>
+              <form action="{{ url_for('hide') }}" method="post">
+                <input type="hidden" name="path" value="{{ task.path }}">
+                <button class="icon-btn danger" type="submit" title="Hides it from index.html but keeps the actual file">Hide</button>
+              </form>
+            </div>
+          </div>
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="safety-note">
+    <strong>Safe by design:</strong>
+    <span>“Hide” never deletes your actual assignment. Every rebuild also backs up the previous root <code>index.html</code> inside <code>_manager/backups</code>.</span>
+  </section>
+</main>
+
+<dialog id="renameDialog">
+  <form method="post" action="{{ url_for('label') }}" class="dialog-card">
+    <div class="dialog-head"><strong>Change display name</strong><button type="button" id="closeDialog">×</button></div>
+    <input type="hidden" name="path" id="renamePath">
+    <label>Public link name</label>
+    <input name="label" id="renameLabel" required>
+    <p>This changes only the name shown on the generated index. It does not rename the actual file.</p>
+    <button class="button primary wide" type="submit">Save display name</button>
+  </form>
+</dialog>
+
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>
