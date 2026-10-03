@@ -1,0 +1,79 @@
+
+1. What is React?
+
+React is a JavaScript library used for building user interfaces, especially
+single-page web applications. It lets developers build reusable UI pieces
+(components) and efficiently update the UI when data changes. React was
+created by Facebook (Meta).
+
+2. Is React a library or framework?
+
+React is a LIBRARY, not a framework. It focuses only on the "view" layer
+(what the user sees) and does not force a specific project structure or
+provide built-in solutions for things like routing or state management.
+Those are added separately using other libraries (e.g., React Router, Redux).
+A framework, on the other hand, usually dictates the whole application
+structure and controls the flow of the program (inversion of control).
+
+3. What is a component?
+
+A component is a small, independent, and reusable piece of code that
+returns a piece of UI (usually written in JSX). Components can be:
+  - Functional Components (plain JavaScript functions that return JSX)
+  - Class Components (ES6 classes that extend React.Component)
+
+Example:
+function Welcome() {
+  return <h1>Hello, World!</h1>;
+}
+
+4. Why are components important?
+
+- Reusability: Write once, use multiple times across the app.
+- Maintainability: Easier to manage and debug small, isolated pieces of code.
+- Readability: Breaks a complex UI into smaller, understandable parts.
+- Separation of concerns: Each component handles its own logic and UI.
+- Scalability: Makes large applications easier to build and scale.
+
+5. What is JSX?
+
+JSX (JavaScript XML) is a syntax extension for JavaScript that allows
+writing HTML-like code inside JavaScript. It makes the code easier to
+read and write. JSX is not valid JavaScript by itself; it gets compiled
+(transpiled) into regular JavaScript function calls (React.createElement)
+using tools like Babel.
+
+Example:
+const element = <h1>Hello, JSX!</h1>;
+
+is compiled to:
+const element = React.createElement('h1', null, 'Hello, JSX!');
+
+6. What is Virtual DOM?
+
+The Virtual DOM is a lightweight, in-memory copy of the Real DOM. React
+uses it to keep track of changes in the UI. Whenever the state of a
+component changes, React first updates the Virtual DOM, then compares it
+with the previous version, and finally updates only the changed parts in
+the Real DOM. This makes UI updates faster and more efficient.
+
+7. What is the Real DOM?
+
+The Real DOM (Document Object Model) is the actual structure of a web
+page that the browser creates and renders. It represents the HTML
+elements as a tree of objects that JavaScript can manipulate. Updating
+the Real DOM directly is slower and more expensive because the browser
+has to re-render/repaint the UI every time a change is made.
+
+8. What is reconciliation?
+
+Reconciliation is the process React uses to update the Real DOM
+efficiently. When a component's state or props change:
+  1. React creates a new Virtual DOM tree.
+  2. It compares (diffs) the new Virtual DOM with the previous one using
+     the "diffing algorithm."
+  3. React calculates the minimal number of changes needed.
+  4. Only those specific changes are applied to the Real DOM.
+
+This process makes React fast, since it avoids unnecessary re-renders of
+the entire UI.

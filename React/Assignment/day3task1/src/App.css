@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin: 30px;
+    background-color: black;
+    padding: 30px;
+}
+
+.header:hover {
+    color: blue;
+}
+
+.Logo{
+    display: flex;
+    justify-content: center;
+}
+
+.Logo img {
+    width: 450px;
+    height: 350px;
+}
+
+.info{
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.info button {
+    background-color: aquamarine;
+    color: black;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    font-weight: 800;
+    cursor: pointer;
+
+    display: block;
+    margin: 20px auto;
+}
+
