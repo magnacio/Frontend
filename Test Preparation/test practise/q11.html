@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let arr1 =[10,20,30,40,50];
+        for(let i=arr1.length-1;i>=0;i--){
+            let count=0;
+            for(let j=0;j<arr1.length;j++){
+                if(arr1[i]<arr1[j]){
+                    count++;
+                }
+            }
+            if (count === 1) {
+                console.log("Second largest:", arr1[i]);
+                break; 
+                }
+        }
+
+
+    </script>
+    
+</body>
+</html>

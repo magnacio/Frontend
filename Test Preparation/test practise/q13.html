@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 =[10,20,30,10,50];
+        let arr2 =[];
+        for(let i=0;i<arr1.length;i++){
+            if(!arr2.includes(arr1[i])){
+                arr2.push(arr1[i]);
+            }
+        }
+        console.log("Array without duplicates:", arr2);
+    </script>
+</body>
+</html>
