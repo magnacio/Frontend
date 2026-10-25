@@ -8,3 +8,5 @@ while(num<100):
     
     step+=step1
     step1+=1 
+
+    
