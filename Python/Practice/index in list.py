@@ -1,0 +1,10 @@
+elements=[10,20,30,40,50]
+print(elements)
+index=0
+elements.pop(2)
+elements.append(90)
+elements.insert(2,25)
+elements.remove(40)
+while(index<5):
+    print(elements[index])
+    index+=1
